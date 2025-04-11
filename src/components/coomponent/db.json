@@ -1,0 +1,23 @@
+{
+    "data": {
+      "id": 1,
+      "title": "qdwq",
+      "logo": null,
+      "logo_dark": null,
+      "desc": "wdqwdqdw",
+      "address": "Город, район | Город2, район2...",
+      "phone_number": "+1 234 56 78  | +1 526 25 25...",
+      "email": "axror@gmail.com",
+      "work_time": {
+        "ru": null
+      },
+      "map": null,
+      "exchange": null,
+      "favicon": null,
+      "telegram": "https://t.me/akhror.asalbayev",
+      "instagram": "https://t.me/akhror.asalbayev",
+      "facebook": "https://web",
+      "youtube": "https://t.me/akhror.asalbayev"
+    }
+  }
+  
