@@ -1,10 +1,10 @@
 import React from 'react';
+import './metals.scss';  // Make sure the file path is correct
 import img3 from '../../assets/img/metals.png';
 import avtor from '../../assets/img/metals1.png';
 import avtor1 from '../../assets/img/metals2.png';
 import avtor2 from '../../assets/img/metals3.png';
 import avtor3 from '../../assets/img/metals4.png';
-import './metals.scss';
 
 function MetalsComponent() {
   return (
