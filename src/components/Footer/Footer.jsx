@@ -12,26 +12,26 @@ export default function GlobalPresence() {
     message: "",
     accepted: false,
   });
-  const [siteInfo, setSiteInfo] = useState()
+
+  const [siteInfo, setSiteInfo] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get("https://qwer.mediaprint.uz/api/siteinfo")
-
-        setSiteInfo(response.data.data)
-
-console.log(response.data.data)
+        const response = await axios.get("https://qwer.mediaprint.uz/api/siteinfo");
+        setSiteInfo(response.data.data);
       } catch (error) {
-        console.log(error)
+        console.error("Ошибка API:", error.response?.status, error.response?.data);
+        // Моковые данные
+        setSiteInfo({
+          address: "Mock address: Tashkent, Uzbekistan",
+          email: "mock.email@itsgroup.uz",
+        });
       }
-    }
+    };
 
-    fetchData()
-  }, [])
-
-  console.log(siteInfo)
-
+    fetchData();
+  }, []);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -43,7 +43,7 @@ console.log(response.data.data)
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    console.log("Form submitted:", formData);
     // здесь может быть логика отправки данных
   };
 
@@ -87,7 +87,6 @@ console.log(response.data.data)
               <span>
                 By submitting this form, I confirm that I have read and accept the Privacy Policy.
               </span>
-
             </label>
             <button type="submit">Send</button>
           </div>
@@ -106,7 +105,7 @@ console.log(response.data.data)
             <a href="#"><FaLinkedin /></a>
             <a href="#"><FaInstagram /></a>
             <a href="#"><FaFacebook /></a>
-            <a href="mailto:itsgroup@gmail.ru"><FaEnvelope /></a>
+            <a href={`mailto:${siteInfo?.email}`}><FaEnvelope /></a>
           </div>
           <p className="footer__copyright">Copyright &copy; 2025 ITS Group</p>
         </div>
@@ -133,19 +132,17 @@ console.log(response.data.data)
         </div>
 
         <div className="footer__section">
-          <h3>Адрес магазина</h3>
+          <h3>Address</h3>
           <p className="footer__address">
-            <strong>Tashkent Ring Automobile Road,</strong> Tashkent, Toshkent Shahri, Uzbekistan
-            <p>{siteInfo?. address}</p>
+            <strong>Tashkent Ring Road,</strong> Tashkent, Uzbekistan
           </p>
-          <h3>Адрес офиса</h3>
-          <p className="footer__address">
-            <strong>Tashkent Ring Automobile Road,</strong> Tashkent, Toshkent Shahri, Uzbekistan
-            <p>{siteInfo?.address}</p>
-          </p>
-          <h3>Электронная почта</h3>
+          {siteInfo?.address && (
+            <p className="footer__address">
+              Additional Info: <span>{siteInfo.address}</span>
+            </p>
+          )}
+          <h3>Email</h3>
           <p className="footer__email">{siteInfo?.email}</p>
-          <p>{siteInfo?.address}</p>
         </div>
       </div>
 
