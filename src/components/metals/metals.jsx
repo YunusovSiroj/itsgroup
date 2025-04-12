@@ -18,7 +18,7 @@ function Component() {
         <a href="">What We Do</a>
       </div>
       <div className='hm2'>
-        <h1>What We Do</h1>
+        <h1>What We Doo</h1>
         <p>We provide individual end-to-end solutions in global commodity trading.  From sourcing rto managing logistics, storage, financing, and post-supply services, we ensure our products move efficiently across global markets and bring utmost benefit to our customers</p>
       </div>
       <div>
