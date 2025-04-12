@@ -1,9 +1,8 @@
 import "./Footer.scss";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { FaLinkedin, FaInstagram, FaFacebook, FaEnvelope, FaGlobe } from "react-icons/fa";
 import w1 from "../../assets/img/Mask group1.png";
 import wq13 from "../../assets/img/Frame 34512.png";
-import axios from "axios";
 
 export default function GlobalPresence() {
   const [formData, setFormData] = useState({
@@ -12,26 +11,6 @@ export default function GlobalPresence() {
     message: "",
     accepted: false,
   });
-
-  const [siteInfo, setSiteInfo] = useState();
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get("https://qwer.mediaprint.uz/api/siteinfo");
-        setSiteInfo(response.data.data);
-      } catch (error) {
-        console.error("Ошибка API:", error.response?.status, error.response?.data);
-        // Моковые данные
-        setSiteInfo({
-          address: "Mock address: Tashkent, Uzbekistan",
-          email: "mock.email@itsgroup.uz",
-        });
-      }
-    };
-
-    fetchData();
-  }, []);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -43,8 +22,8 @@ export default function GlobalPresence() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    // здесь может быть логика отправки данных
+    console.log(formData);
+    // Здесь может быть логика отправки данных
   };
 
   return (
@@ -105,7 +84,7 @@ export default function GlobalPresence() {
             <a href="#"><FaLinkedin /></a>
             <a href="#"><FaInstagram /></a>
             <a href="#"><FaFacebook /></a>
-            <a href={`mailto:${siteInfo?.email}`}><FaEnvelope /></a>
+            <a href="mailto:itsgroup@gmail.ru"><FaEnvelope /></a>
           </div>
           <p className="footer__copyright">Copyright &copy; 2025 ITS Group</p>
         </div>
@@ -132,17 +111,16 @@ export default function GlobalPresence() {
         </div>
 
         <div className="footer__section">
-          <h3>Address</h3>
+          <h3>Адрес магазина</h3>
           <p className="footer__address">
-            <strong>Tashkent Ring Road,</strong> Tashkent, Uzbekistan
+            <strong>Tashkent Ring Automobile Road,</strong> Tashkent, Toshkent Shahri, Uzbekistan
           </p>
-          {siteInfo?.address && (
-            <p className="footer__address">
-              Additional Info: <span>{siteInfo.address}</span>
-            </p>
-          )}
-          <h3>Email</h3>
-          <p className="footer__email">{siteInfo?.email}</p>
+          <h3>Адрес офиса</h3>
+          <p className="footer__address">
+            <strong>Business Center Tower,</strong> Amir Temur Avenue, Tashkent
+          </p>
+          <h3>Электронная почта</h3>
+          <p className="footer__email">info@itsgroup.uz</p>
         </div>
       </div>
 
