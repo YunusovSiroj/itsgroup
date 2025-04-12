@@ -10,8 +10,8 @@ function Router() {
         <Routes>
             <Route path="/" element={<Layouts />}>
                 <Route index element={<Home />} />
-                <Route path="component" element={<Coomponent />} />
-                <Route path="menu" element={<Menu />} />
+                <Route path="/component" element={<Coomponent />} />
+                {/* <Route path="/menu" element={<Menu />} /> */}
             </Route>
         </Routes>
                 

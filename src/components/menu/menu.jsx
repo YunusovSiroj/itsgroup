@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from "react";
 import { X } from "lucide-react";
 import image from '../../assets/img/menu/Rectangle 1305869.png'; // обычный путь к изображению
 import "./menu.scss";

@@ -27,6 +27,7 @@ function Navbar() {
 
           <button onClick={toggleMenu} className="menu-toggle-button">
             <MdMenu />
+            
           </button>
         </div>
       </div>
