@@ -5,6 +5,7 @@ import avtor1 from '../../assets/img/component/image.png';
 import avtor2 from '../../assets/img/component/image1.png';
 import avtor3 from '../../assets/img/component/image2.png';
 import './coomponent.scss'
+import './coomponentmedia.scss'
 
 function Component() {
   return (

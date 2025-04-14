@@ -1,77 +1,121 @@
 .sidebar-menu {
-    position: fixed;
-    inset: 0;
+  position: fixed;
+  inset: 0;
+  display: flex;
+  padding: 10px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 20px;
+  width: 100%;
+  height: 95%;
+  z-index: 100;
+
+  &.hidden {
+    display: none;
+  }
+
+  .menu-content {
+    width: 50%;
+    background: white;
+    padding: 2.5rem;
     display: flex;
-    padding: 10px;
-    margin-left: 80px;
-    margin-top: 20px;
-    width: 100%;
-    z-index: 100;
-    &.hidden {
-      display: none;
-    }
-  
-    .menu-content {
-      width: 50%;
-    //   height: 100%;
-      background: white;
-      padding: 2.5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-  
-    .close-button {
-      position: absolute;
-      top: 1.25rem;
-      right: 1.25rem;
-      color: #4a4a4a;
-      &:hover {
-        color: black;
-      }
-    }
-  
-    .menu-nav {
-      padding-left: 1rem;
-    }
-  
-    .menu-title {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: #007bff;
-      margin-bottom: 1rem;
-    }
-  
-    .menu-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-  
-      li {
-        font-size: 1.125rem;
-        color: #333;
-        margin-bottom: 0.5rem;
-      }
-  
-      
-    }
-  
-    .menu-footer {
-      margin-top: 1.5rem;
-      font-weight: 600;
-      color: #888;
-  
-      p {
-        font-size: 1.25rem;
-        margin-bottom: 0.5rem;
-      }
-    }
-  
-    .image-container {
-      width: 50%;
-      position: relative;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+  }
+
+  .close-button {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    color: #4a4a4a;
+
+    &:hover {
+      color: black;
     }
   }
-  
+
+  .menu-nav {
+    padding-left: 1rem;
+  }
+
+  .menu-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 1rem;
+  }
+
+  .menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: 1.125rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .menu-footer {
+    margin-top: 1.5rem;
+    font-weight: 600;
+    color: #888;
+
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .image-container {
+    position: relative;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  /* 🔽 Адаптация для планшетов и ниже */
+  @media (max-width: 768px) {
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 0;
+    padding: 0;
+    height: 100%;
+
+    .menu-content {
+      width: 100%;
+      padding: 1.5rem;
+    }
+
+    .image-container {
+      display: none; // ❗ Скрываем изображение на маленьких экранах
+    }
+  }
+
+  /* 🔽 Адаптация для телефонов */
+  @media (max-width: 480px) {
+    .menu-title {
+      font-size: 1.25rem;
+    }
+
+    .menu-list li {
+      font-size: 1rem;
+    }
+
+    .menu-footer p {
+      font-size: 1rem;
+    }
+
+    .close-button {
+      top: 1rem;
+      right: 1rem;
+    }
+  }
+}
