@@ -1,5 +1,6 @@
 import React, {useEffect, useState } from 'react';
 import './about.scss';
+import  './aboutmadia.scss'
 import about from '../../../assets/img/Group.png';
 import avtor from '../../../assets/img/avtor.png';
 import wq3 from '../../../assets/img/Group3.png';

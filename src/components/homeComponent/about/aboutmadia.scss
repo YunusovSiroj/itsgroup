@@ -1,0 +1,127 @@
+    /* Media Queries */
+    @media (max-width: 1500px) {
+        .about .about2 .about3 img {
+            width: 70%;
+        }
+        .about .about2 .about3 {
+            margin-top: 50px;
+        }
+    
+      }
+    @media (max-width: 1200px) {
+        .about .about2 .about3 {
+          flex-direction: column;
+          width: 90%;
+          border-radius: 0 100px 0 0;
+        }
+        
+        .about .about2 .about3 img {
+            width: 100%;
+        }
+        .supply-chain__card {
+          width: 45%;
+        }
+      }
+    
+      @media (max-width: 992px) {
+        .about .about2 {
+          margin-top: 150px;
+        }
+    
+        .about .about2 .about3 {
+          width: 95%;
+          padding-left: 16px;
+        }
+    
+        .wq4 .wq2 .wq5 .global-presence {
+          width: 90%;
+          padding: 0.5rem;
+        }
+    
+        .container .content {
+          left: 10%;
+          top: 8%;
+        }
+    
+        .container .navigation-buttons {
+          left: 10%;
+        }
+    
+        .supply-chain__grid {
+          flex-direction: column;
+          align-items: center;
+        }
+    
+        .supply-chain__card {
+          width: 80%;
+          margin-bottom: 20px;
+        }
+      }
+    
+      @media (max-width: 768px) {
+        .about .about1 {
+          display: none;
+        }
+    
+        .about .about2 .about3 {
+          flex-direction: column;
+          border-radius: 0 50px 0 0;
+        }
+    
+        .about .about2 .about3 .about4 {
+          width: 100%;
+          margin-left: 0;
+          margin-right: 0;
+          padding: 10px;
+        }
+    
+        .about .about2 .about3 img {
+          display: none;
+        }
+    
+        .container {
+          flex-direction: column;
+        }
+    
+        .container .content {
+          left: 5%;
+          padding: 10px;
+        }
+    
+        .container .navigation-buttons {
+          flex-direction: column;
+          bottom: 10px;
+          left: 5%;
+        }
+    
+        .supply-chain {
+          margin-left: 5%;
+          margin-right: 5%;
+        }
+    
+        .supply-chain__card {
+          width: 100%;
+        }
+      }
+    
+      @media (max-width: 480px) {
+        .about .about2 .about3 .about4 h2,
+        .container .content h2,
+        .wq4 .wq2 .wq5 .global-presence h2 {
+          font-size: 24px;
+        }
+    
+        .supply-chain__title {
+          font-size: 24px;
+        }
+    
+        .container .content ul li {
+          font-size: 1rem;
+        }
+    
+        .container .navigation-buttons button {
+          font-size: 16px;
+          padding: 8px 12px;
+        }
+      }
+    
