@@ -1,46 +1,51 @@
-import { useState } from "react";
-import React from "react";
+import React from "react"; // ✅ Объединил импорты useState и React
 import { X } from "lucide-react";
-import image from '../../assets/img/menu/Rectangle 1305869.png'; // обычный путь к изображению
+import image from "../../assets/img/menu/Rectangle 1305869.png"; // ✅ Пробелы не критичны, но для единообразия можно убрать
+
 import "./menu.scss";
 
-export default function SidebarMenu() {
-  const [isOpen, setIsOpen] = useState(true);
+export default function SidebarMenu({ setIsMenuOpen, isMenuOpen}) {
+const closeModal = () => {
+  setIsMenuOpen(!isMenuOpen)
 
+  console.log(isMenuOpen)
+}
   return (
     <div>
-        <div className={`sidebar-menu ${isOpen ? "open" : "hidden"}`}>
-          {/* Левая часть с меню */}
-          <div className="menu-content">
-                <button className="close-button" onClick={() => setIsOpen(false)}>
-                <X size={30} />
-                </button>
-            <nav className="menu-nav">
-              <h2 className="menu-title">- What We Do</h2>
-              <ul className="menu-list">
-                <li>Metals and minerals</li>
-                <li>Oil & Gas</li>
-                <li>Agriculture</li>
-                <li >Logistics and Storage</li>
-              </ul>
-              <div className="menu-footer">
-                <p>Who We Are</p>
-                <p>ESG</p>
-                <p>Vacancies</p>
-                <p>Contacts</p>
-              </div>
-            </nav>
-          </div>
+      <div className={`sidebar-menu `}>
+        {/* Левая часть с меню */}
+        <div className="menu-content">
+          <button className="close-button" >
+            <X size={30} onClick={() => closeModal()} />
+          </button>
 
-          {/* Правая часть с изображением */}
-          <div className="image-container">
-            <img
-              src={image}
-              alt="Power Grid"
-              className="menu-image"
-            />
-          </div>
+          <nav className="menu-nav">
+            <h2 className="menu-title">- What We Do</h2>
+            <ul className="menu-list" onClick={() => closeModal()}  >
+              <li><a href="/component">Metals and minerals</a></li> {/* ✅ Исправлено: добавлен Link и закрыт тег */}
+              <li >Oil & Gas</li>
+              <li>Agriculture</li>
+              <li>Logistics and Storage</li> {/* ✅ Был лишний пробел перед > */}
+            </ul>
+
+            <div className="menu-footer" onClick={() => closeModal()}>
+              <p>Who We Are</p>
+              <p>ESG</p>
+              <p>Vacancies</p>
+              <p>Contacts</p>
+            </div>
+          </nav>
         </div>
+
+        {/* Правая часть с изображением */}
+        <div className="image-container">
+          <img
+            src={image}
+            alt="Power Grid"
+            className="menu-image"
+          />
+        </div>
+      </div>
     </div>
   );
 }

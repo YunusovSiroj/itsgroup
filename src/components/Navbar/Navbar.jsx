@@ -32,7 +32,7 @@ function Navbar() {
         </div>
       </div>
 
-      {isMenuOpen && <Menu />}
+      {isMenuOpen && <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />}
     </div>
   );
 }

@@ -29,7 +29,7 @@ export default function Navbar2() {
                 </div>
             </div>
         </div>
-        {isMenuOpen && <Menu />}
+        {isMenuOpen && <Menu isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />}
     </div>
   );
 }
