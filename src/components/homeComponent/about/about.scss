@@ -18,7 +18,7 @@
 
       .about3 {
           display: flex;
-          width: 70%;
+          width: 100%;
           margin-left: 10%;
           margin-right: 10%;
           background-color: #f5f5f5;
@@ -72,7 +72,8 @@
 
       .wq5 {
           display: flex;
-          justify-content: center;
+          margin-left: 10%;
+          margin-right: 10%;
           margin-top: 200px;
 
           .global-presence {
@@ -149,7 +150,7 @@
           }
     }
     .qw1 img{
-        width: 80%;
+        width: 100%;
         
     }
   }
@@ -212,16 +213,17 @@
   top: 150px;
   display: flex;
   justify-content: center;
-  margin: auto;
-
+  margin-left: 10%;
+  margin-right: 10%;
   .background-image {
+    width: 100%;
       clip-path: polygon(0% 0%, 90% 0%, 100% 10%, 100% 100%, 100% 100%, 0% 100%, 0% 90%, 0% 10%);
   }
 
   .content {
       position: absolute;
       top: 10%;
-      left: 18%;
+      left: 5%;
       border-left: 4px solid #e5e7eb;
       padding: 20px;
       color: white;
@@ -258,7 +260,7 @@
   .navigation-buttons {
       position: absolute;
       bottom: 20px;
-      left: 18%;
+      left: 5%;
       display: flex;
 
       gap: 10px;

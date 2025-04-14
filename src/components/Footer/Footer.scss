@@ -55,6 +55,7 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        
         margin-top: 10px;
 
         .checkbox {
@@ -100,10 +101,8 @@
 
   &__container {
     display: flex;
-    
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
+    margin-right: 10%;
+    margin-left: 10%;
     flex-wrap: wrap;
   }
 
