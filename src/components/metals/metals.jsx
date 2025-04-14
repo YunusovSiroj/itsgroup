@@ -1,5 +1,5 @@
 import React from 'react';
-import './metals.scss';  // Make sure the file path is correct
+import './metals.scss';
 import img3 from '../../assets/img/metals.png';
 import avtor from '../../assets/img/metals1.png';
 import avtor1 from '../../assets/img/metals2.png';
