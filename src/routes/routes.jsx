@@ -4,7 +4,8 @@ import Layouts from '../Layouts/layouts'
 import Coomponent from '../components/coomponent/coomponent'
 import Home from '../components/homeComponent/Home'
 import Metals from '../components/metals/metals'
-
+import Base from '../components/base/base'
+import Slabs from '../components/slabs/slabs'
 function Router() {
     return (
         <Routes>
@@ -12,7 +13,8 @@ function Router() {
                 <Route index element={<Home />} />
                 <Route path="/component" element={<Coomponent />} />
                 <Route path="/metals" element={<Metals />} />
-                {/* <Route path="/menu" element={<Menu />} /> */}
+                <Route path="/base" element={<Base />} />
+                <Route path="/slabs" element={<Slabs />} />
             </Route>
         </Routes>
                 

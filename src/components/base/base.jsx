@@ -1,10 +1,9 @@
 import React from 'react';
-import img3 from '../../assets/img/metals.png';
-import avtor from '../../assets/img/metals1.png';
-import avtor1 from '../../assets/img/metals2.png';
-import avtor2 from '../../assets/img/metals3.png';
-import avtor3 from '../../assets/img/metals4.png';
-import './metals.scss'
+import img3 from '../../assets/img/base/met1.png';
+import avtor from '../../assets/img/base/met2.png';
+import avtor1 from '../../assets/img/base/met3.png';
+import avtor2 from '../../assets/img/base/met4.png';
+import './base.scss'
 
 function Component() {
   return (
@@ -33,7 +32,7 @@ function Component() {
               <p>
               ITS Group supplies a broad range of base and precious metals . From zinc, copper, and lead to gold and silver, we deliver metals that form the foundation of everything from construction and electronics to renewable energy and finance.
               </p>
-              <a href="/base" className="about5">View more →</a>
+              <a href="/slabs" className="about5">View more →</a>
             </div>
           </div>
         </div>
@@ -44,7 +43,7 @@ function Component() {
               <p>
               We supply high-volume bulk materials that drive the world’s industrial backbone. From iron ore and coal to DRI and HBI, we provide the essential raw inputs used in steelmaking, power generation, cement production, and metallurgy.
               </p>
-              <a href="/base" className="about5">View more →</a>
+              <a href="/metals" className="about5">View more →</a>
             </div>
             <img className="about6" src={avtor1} alt="Author" />
           </div>
@@ -59,18 +58,6 @@ function Component() {
               </p>
               <a href="#" className="about5">View more →</a>
             </div>
-          </div>
-        </div>
-        <div className="about22">
-          <div className="about3">
-            <div className="about4">
-              <h2>Final products</h2>
-              <p>
-              We supply a full range of finished steel products, including rebars, sheets, and pipes, tailored to meet the market demand. Our clients rely on us for ready-to-use, specification-driven materials that combine consistency and reliability,  across global markets.
-              </p>
-              <a href="#" className="about5">View more →</a>
-            </div>
-            <img className="about6" src={avtor3} alt="Author" />
           </div>
         </div>
       </section>

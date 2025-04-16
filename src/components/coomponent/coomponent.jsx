@@ -14,8 +14,8 @@ function Component() {
         <img className="heder1" src={img3} alt="Header Image" />
       </div>
       <div className='hm1'>
-        <a href="">Home</a>
-        <span>  → </span>
+        <a className='qsd1' href="">Home</a>
+        <span className='qsd1'>  → </span>
         <a href="">What We Do</a>
       </div>
       <div className='hm2'>
@@ -43,7 +43,7 @@ function Component() {
               <p>
                 We are an international trading company focusing on the supply of metallurgy, oil & gas, and agriculture products. With a strong presence across Europe, Asia, Africa, and the Middle East, we connect producers with global markets, through integrated solutions that combine sourcing, logistics, storage, and finance.
               </p>
-              <a href="#" className="about5">View more →</a>
+              <a href="/metals" className="about5">View more →</a>
             </div>
             <img className="about6" src={avtor1} alt="Author" />
           </div>
