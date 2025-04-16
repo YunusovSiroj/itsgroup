@@ -22,10 +22,10 @@ const closeModal = () => {
           <nav className="menu-nav">
             <h2 className="menu-title">- What We Do</h2>
             <ul className="menu-list" onClick={() => closeModal()}  >
-              <li><a href="/component">Metals and minerals</a></li> {/* ✅ Исправлено: добавлен Link и закрыт тег */}
-              <li >Oil & Gas</li>
-              <li>Agriculture</li>
-              <li>Logistics and Storage</li> {/* ✅ Был лишний пробел перед > */}
+              <li><a className="rewq" href="/component">Metals and minerals</a></li> {/* ✅ Исправлено: добавлен Link и закрыт тег */}
+              <li ><a className="rewq" href="/component">Oil & Gas</a></li>
+              <li><a className="rewq" href="/component">Agriculture</a></li>
+              <li><a className="rewq" href="/component">Logistics and Storage</a> </li> {/* ✅ Был лишний пробел перед > */}
             </ul>
 
             <div className="menu-footer" onClick={() => closeModal()}>

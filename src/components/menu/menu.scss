@@ -13,7 +13,10 @@
   &.hidden {
     display: none;
   }
-
+ .rewq{
+  text-decoration: none;
+  color: #020105
+ }
   .menu-content {
     width: 50%;
     background: white;
@@ -29,7 +32,12 @@
     position: absolute;
     top: 1.25rem;
     right: 1.25rem;
-    color: #4a4a4a;
+    color: #020105;
+    border: 1px solid #ffffff;
+    background: #fff;
+    border-radius: 50%;
+    width: 6%;
+    height: 6%;
 
     &:hover {
       color: black;
