@@ -24,9 +24,9 @@ function Component() {
       </div>
       <div>
       <section className="about11">
-        <div className="about2">
+        <div className="about22">
           <div className="about3">
-          <img className="about6" src={avtor} alt="Author" />
+          
             <div className="about4">
               <h2>Base metals</h2>
               <p>
@@ -34,10 +34,12 @@ function Component() {
               </p>
               <a href="" className="about5">View more →</a>
             </div>
+            <img className="about6" src={avtor} alt="Author" />
           </div>
         </div>
-        <div className="about22">
+        <div className="about2">
           <div className="about3">
+          <img className="about6" src={avtor1} alt="Author" />
             <div className="about4">
               <h2>Bulk commodities</h2>
               <p>
@@ -45,12 +47,12 @@ function Component() {
               </p>
               <a href="/metals" className="about5">View more →</a>
             </div>
-            <img className="about6" src={avtor1} alt="Author" />
+            
           </div>
         </div>
-        <div className="about2">
+        <div className="about22">
           <div className="about3">
-            <img className="about6" src={avtor2} alt="Author" />
+            
             <div className="about4">
               <h2>Semi products</h2>
               <p>
@@ -58,6 +60,7 @@ function Component() {
               </p>
               <a href="#" className="about5">View more →</a>
             </div>
+            <img className="about6" src={avtor2} alt="Author" />
           </div>
         </div>
       </section>
