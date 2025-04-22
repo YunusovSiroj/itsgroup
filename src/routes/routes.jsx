@@ -6,6 +6,8 @@ import Home from '../components/homeComponent/Home'
 import Metals from '../components/metals/metals'
 import Base from '../components/base/base'
 import Slabs from '../components/slabs/slabs'
+import Semi from '../components/semi/semi'
+import Vacancies from '../components/vacancies/vacancies'
 function Router() {
     return (
         <Routes>
@@ -15,6 +17,8 @@ function Router() {
                 <Route path="/metals" element={<Metals />} />
                 <Route path="/base" element={<Base />} />
                 <Route path="/slabs" element={<Slabs />} />
+                <Route path="/semi" element={<Semi />} />
+                <Route path="/vacancies" element={<Vacancies />} />
             </Route>
         </Routes>
                 

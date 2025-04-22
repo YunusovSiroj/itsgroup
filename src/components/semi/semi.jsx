@@ -1,9 +1,9 @@
 import React from 'react';
 import img3 from '../../assets/img/base/met1.png';
 import avtor from '../../assets/img/base/met2.png';
-import avtor1 from '../../assets/img/base/slobs.png';
-import avtor2 from '../../assets/img/base/slobs1.png';
-import './slabs.scss'
+import avtor1 from '../../assets/img/base/met3.png';
+import avtor2 from '../../assets/img/base/met4.png';
+import './semi.scss'
 
 function Component() {
   return (
@@ -16,7 +16,7 @@ function Component() {
         <span className='qsd1'>  → </span>
         <a className='qsd1' href="">What We Do</a>
         <span className='qsd1'>  → </span>
-        <a href="">Semi products</a>
+        <a href="">Metals and minerals</a>
       </div>
       <div className='hm2'>
         <h1>Metals and minerals</h1>
@@ -24,35 +24,33 @@ function Component() {
       </div>
       <div>
       <section className="about11">
-        <div className="about22">
+        <div className="about2">
           <div className="about3">
-          
+          <img className="about6" src={avtor} alt="Author" />
             <div className="about4">
               <h2>Base metals</h2>
               <p>
               ITS Group supplies a broad range of base and precious metals . From zinc, copper, and lead to gold and silver, we deliver metals that form the foundation of everything from construction and electronics to renewable energy and finance.
               </p>
-              <a href="" className="about5">View more →</a>
+              <a href="/slabs" className="about5">View more →</a>
             </div>
-            <img className="about6" src={avtor} alt="Author" />
           </div>
         </div>
-        <div className="about2">
+        <div className="about22">
           <div className="about3">
-          <img className="about6" src={avtor1} alt="Author" />
             <div className="about4">
               <h2>Bulk commodities</h2>
               <p>
               We supply high-volume bulk materials that drive the world’s industrial backbone. From iron ore and coal to DRI and HBI, we provide the essential raw inputs used in steelmaking, power generation, cement production, and metallurgy.
               </p>
-              <a href="/semi" className="about5">View more →</a>
+              <a href="/metals" className="about5">View more →</a>
             </div>
-            
+            <img className="about6" src={avtor1} alt="Author" />
           </div>
         </div>
-        <div className="about22">
+        <div className="about2">
           <div className="about3">
-            
+            <img className="about6" src={avtor2} alt="Author" />
             <div className="about4">
               <h2>Semi products</h2>
               <p>
@@ -60,7 +58,6 @@ function Component() {
               </p>
               <a href="#" className="about5">View more →</a>
             </div>
-            <img className="about6" src={avtor2} alt="Author" />
           </div>
         </div>
       </section>
