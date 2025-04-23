@@ -22,8 +22,26 @@ export default function GlobalPresence() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
-    // Здесь может быть логика отправки данных
+
+    if (!formData.accepted) {
+      alert("Пожалуйста, примите условия политики конфиденциальности.");
+      return;
+    }
+
+    if (!/^\+?\d{9,15}$/.test(formData.phone)) {
+      alert("Введите корректный номер телефона.");
+      return;
+    }
+
+    console.log("Отправленные данные:", formData);
+
+    // Очистка формы
+    setFormData({
+      name: "",
+      phone: "",
+      message: "",
+      accepted: false,
+    });
   };
 
   return (
@@ -67,7 +85,7 @@ export default function GlobalPresence() {
                 By submitting this form, I confirm that I have read and accept the Privacy Policy.
               </span>
             </label>
-            <button type="submit">Send</button>
+            <button type="submit" disabled={!formData.accepted}>Send</button>
           </div>
         </form>
         <div className="contact-image">
@@ -86,7 +104,9 @@ export default function GlobalPresence() {
             <a href="#"><FaFacebook /></a>
             <a href="mailto:itsgroup@gmail.ru"><FaEnvelope /></a>
           </div>
-          <p className="footer__copyright">Copyright &copy; 2025 ITS Group</p>
+          <p className="footer__copyright">
+            Copyright &copy; 2025 ITS Group
+          </p>
         </div>
 
         <div className="footer__section">
@@ -120,7 +140,9 @@ export default function GlobalPresence() {
             <strong>Business Center Tower,</strong> Amir Temur Avenue, Tashkent
           </p>
           <h3>Электронная почта</h3>
-          <p className="footer__email">info@itsgroup.uz</p>
+          <p className="footer__email">
+            <a href="mailto:info@itsgroup.uz">info@itsgroup.uz</a>
+          </p>
         </div>
       </div>
 
