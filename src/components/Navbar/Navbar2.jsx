@@ -2,7 +2,7 @@ import './Navbar2.scss';
 import React, { useEffect, useState } from 'react';
 import { MdMenu } from "react-icons/md";
 import { IoEarth } from "react-icons/io5";
-import img1 from '../../assets/img/Mask group.png';
+import img1 from '../../assets/img/Mask group.webp';
 import Menu from '../menu/menu';
 import axios from 'axios';
 

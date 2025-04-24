@@ -1,8 +1,8 @@
 import React from 'react';
-import img3 from '../../assets/img/base/met1.png';
-import avtor from '../../assets/img/base/met2.png';
-import avtor1 from '../../assets/img/base/slobs.png';
-import avtor2 from '../../assets/img/base/slobs1.png';
+import img3 from '../../assets/img/base/met1.webp';
+import avtor from '../../assets/img/base/met2.webp';
+import avtor1 from '../../assets/img/base/slobs.webp';
+import avtor2 from '../../assets/img/base/slobs1.webp';
 import './slabs.scss'
 
 function Component() {

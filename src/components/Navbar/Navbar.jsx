@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import img2 from '../../assets/img/Mask group1.png';
+import img2 from '../../assets/img/Mask group1.webp';
 import { MdMenu } from "react-icons/md";
 import { IoEarth } from "react-icons/io5";
 import './Navbar.scss';

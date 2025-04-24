@@ -1,6 +1,6 @@
 import React from 'react';
-import img3 from '../../assets/img/Frame 1948754131.png';
-import avtor from '../../assets/img/avtor.png';
+import img3 from '../../assets/img/Frame 1948754131.webp';
+import avtor from '../../assets/img/avtor.webp';
 import avtor1 from '../../assets/img/component/image.png';
 import avtor2 from '../../assets/img/component/image1.png';
 import avtor3 from '../../assets/img/component/image2.png';

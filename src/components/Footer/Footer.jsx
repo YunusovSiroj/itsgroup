@@ -1,8 +1,8 @@
 import "./Footer.scss";
 import React, { useState } from "react";
 import { FaLinkedin, FaInstagram, FaFacebook, FaEnvelope, FaGlobe } from "react-icons/fa";
-import w1 from "../../assets/img/Mask group1.png";
-import wq13 from "../../assets/img/Frame 34512.png";
+import w1 from "../../assets/img/Mask group1.webp";
+import wq13 from "../../assets/img/Frame 34512.webp";
 
 export default function GlobalPresence() {
   const [formData, setFormData] = useState({
