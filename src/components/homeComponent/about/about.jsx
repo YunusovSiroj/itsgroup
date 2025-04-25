@@ -119,7 +119,7 @@ const StatItem = ({ label, target }) => {
               <p>
                 We are an international trading company focusing on the supply of metallurgy, oil & gas, and agriculture products. With a strong presence across Europe, Asia, Africa, and the Middle East, we connect producers with global markets, through integrated solutions that combine sourcing, logistics, storage, and finance.
               </p>
-              <a href="#" className="about5">View more →</a>
+              <a href="/component" className="about5">View more →</a>
             </div>
             <img className="about6" src={avtor} alt="Author" />
           </div>

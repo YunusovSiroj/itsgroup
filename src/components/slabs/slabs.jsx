@@ -16,7 +16,7 @@ function Component() {
         <span className='qsd1'>  → </span>
         <a className='qsd1' href="">What We Do</a>
         <span className='qsd1'>  → </span>
-        <a href="">Semi products</a>
+        <a href="/semi">Semi products</a>
       </div>
       <div className='hm2'>
         <h1>Metals and minerals</h1>
@@ -32,7 +32,7 @@ function Component() {
               <p>
               ITS Group supplies a broad range of base and precious metals . From zinc, copper, and lead to gold and silver, we deliver metals that form the foundation of everything from construction and electronics to renewable energy and finance.
               </p>
-              <a href="" className="about5">View more →</a>
+              <a href="/semi" className="about5">View more →</a>
             </div>
             <img className="about6" src={avtor} alt="Author" />
           </div>
@@ -58,7 +58,7 @@ function Component() {
               <p>
               We deliver high-quality semi-finished products such as billets, slabs, and coils, enabling manufacturers to streamline processing and maintain efficiency across their value chains.
               </p>
-              <a href="#" className="about5">View more →</a>
+              <a href="/semi" className="about5">View more →</a>
             </div>
             <img className="about6" src={avtor2} alt="Author" />
           </div>

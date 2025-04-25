@@ -1,59 +1,120 @@
 import React from 'react';
-import img from '../../assets/img/vacancies/Group.png'
-import img1 from '../../assets/img/vacancies/xxx.png'
-import eq1 from '../../assets/img/icons/Mask group1.png';
-import eq2 from '../../assets/img/icons/Deliver5.png';
-import eq3 from '../../assets/img/icons/Finance.png';
-import eq4 from '../../assets/img/icons/Storage.png';
-import './vacancies.scss'
+import img from '../../assets/img/vacancies/Group.png';
+import img1 from '../../assets/img/vacancies/xxx.webp';
+import eq1 from '../../assets/img/vacancies/Mask group.png';
+import eq2 from '../../assets/img/vacancies/qqq.png';
+import eq3 from '../../assets/img/vacancies/www.png';
+import eq4 from '../../assets/img/vacancies/eee.png';
+import './vacancies.scss';
+import { FaEye, FaPaperPlane } from 'react-icons/fa';
 
-function Component() {
+function Vacancies() {
   const supplyData = [
-    { id: 1, img: eq1, title: "Source", featured: true },
-    { id: 2, img: eq2, title: "Transport" },
-    { id: 3, img: eq3, title: "Finance" },
-    { id: 4, img: eq4, title: "Storage" },
+    { id: 1, img: eq1, title: "Work on a Global Scale", featured: true },
+    { id: 2, img: eq2, title: "Fast-Paced, Results-Driven Environment" },
+    { id: 3, img: eq3, title: "Continuous Learning and Development" },
+    { id: 4, img: eq4, title: "Global Mobility and Career Rotation" },
   ];
+
+  const vacancies = [
+    {
+      tag: 'Заместитель начальника - начальник отдела',
+      title: 'I will design wix website redesign wix website wix ecommerce website',
+      description: 'Join our world-class innovation team, revolutionizing education at ASU Prep Digital. Our mission is to enhance student performance...',
+      price: 1200,
+      time: '14:30',
+      date: '25.02.2023',
+      views: 300,
+      requests: 42,
+    },
+    {
+      tag: 'Аппарат управления',
+      title: 'I will design wix website redesign wix website wix ecommerce website',
+      description: 'Join our world-class innovation team...',
+      price: 900,
+      time: '14:30',
+      date: '25.02.2023',
+      views: 300,
+      requests: 42,
+    },
+    {
+      tag: 'Заведующий кафедрой журналистики',
+      title: 'I will design wix website redesign wix website wix ecommerce website',
+      description: 'Join our world-class innovation team...',
+      price: 1300,
+      time: '14:30',
+      date: '25.02.2023',
+      views: 300,
+      requests: 42,
+    },
+    {
+      tag: 'Главный специалист',
+      title: 'I will design wix website redesign wix website wix ecommerce website',
+      description: 'Join our world-class innovation team...',
+      price: 400,
+      time: '14:30',
+      date: '25.02.2023',
+      views: 300,
+      requests: 42,
+    },
+  ];
+
   return (
-    <div>
-        <div className='vacancies'>
-            <div className='hmq1'>
-                <a className='qsdq1' href="">Home</a>
-                <span className='qsdq1'>  → </span>
-                <a className='qsdq1' href="">What We Do</a>
-                <div className='asq'>
-                    <h2>Contacts</h2>
-                </div>
-            </div>
-            
-            <img src={img} alt="" />
+    <div className="vacancies-wrapper">
+      <section className="vacancies-hero">
+        <div className="vacancies-breadcrumbs">
+          <a href="">Home</a>
+          <span> → </span>
+          <a href="">What We Do</a>
+          <h2>Contacts</h2>
         </div>
-        <div className="career">
-          <div className="career1">
-            <div className="career2">
-              <h2>Bulk commodities</h2>
-              <p>
-              We supply high-volume bulk materials that drive the world’s industrial backbone. From iron ore and coal to DRI and HBI, we provide the essential raw inputs used in steelmaking, power generation, cement production, and metallurgy.
-              </p>
-              <a href="/metals" className="career3">View more →</a>
-            </div>
-            <img className="career4" src={img1} alt="Author" />
-          </div>
+        <img src={img} alt="Banner" />
+      </section>
+
+      <section className="career">
+        <div className="career-text">
+          <h2>Career opportunities</h2>
+          <p>Billets are square or round steel sections used for hot rolling, serving as the base for products like rebars, wire rods, bars, and small-diameter pipes.</p>
         </div>
-        <section className="supply-chain">
-        <h2 className="supply-chain__title">Seamless supply chains</h2>
+        <img className="career-image" src={img1} alt="Career" />
+      </section>
+
+      <section className="supply-chain">
+        <h2>Why join our team</h2>
         <div className="supply-chain__grid">
           {supplyData.map(({ id, img, title, featured }) => (
-            <div key={id} className={`supply-chain__card ${featured ? "supply-chain__card--featured" : ""}`}>
-              <img className="supply-chain__icon" src={img}></img>
-              <h3 className="supply-chain__heading">{title}</h3>
-              <span className="supply-chain__number">{id}</span>
+            <div key={id} className={`supply-card ${featured ? 'featured' : ''}`}>
+              <img src={img} alt={`icon-${id}`} />
+              <h3>{title}</h3>
+              <span className="number">{id}</span>
             </div>
           ))}
         </div>
+      </section>
+
+      <section className="vacancies-list">
+        <h2>Available vacancies</h2>
+        {vacancies.map((vac, idx) => (
+          <div key={idx} className="vacancy-card">
+            <div className="vacancy-header">
+              <span className="vacancy-tag">{vac.tag}</span>
+              <span className="vacancy-meta">{vac.time} | {vac.date}</span>
+            </div>
+            <h3 className="vacancy-title">{vac.title}</h3>
+            <p className="vacancy-description">{vac.description}</p>
+            <div className="vacancy-footer">
+              <div className="price">${vac.price}</div>
+              <div className="info">
+                <span><FaEye /> {vac.views}</span>
+                <span>{vac.requests} запросов</span>
+              </div>
+              <button className="send-button"><FaPaperPlane /> Send</button>
+            </div>
+          </div>
+        ))}
       </section>
     </div>
   );
 }
 
-export default Component;
+export default Vacancies;

@@ -16,7 +16,7 @@ function Component() {
         <span className='qsd1'>  → </span>
         <a className='qsd1' href="">What We Do</a>
         <span className='qsd1'>  → </span>
-        <a href="">Metals and minerals</a>
+        <a href="/vacancies">Metals and minerals</a>
       </div>
       <div className='hm2'>
         <h1>Metals and minerals</h1>
@@ -32,7 +32,7 @@ function Component() {
               <p>
               ITS Group supplies a broad range of base and precious metals . From zinc, copper, and lead to gold and silver, we deliver metals that form the foundation of everything from construction and electronics to renewable energy and finance.
               </p>
-              <a href="/slabs" className="about5">View more →</a>
+              <a href="/vacancies" className="about5">View more →</a>
             </div>
           </div>
         </div>
@@ -43,7 +43,7 @@ function Component() {
               <p>
               We supply high-volume bulk materials that drive the world’s industrial backbone. From iron ore and coal to DRI and HBI, we provide the essential raw inputs used in steelmaking, power generation, cement production, and metallurgy.
               </p>
-              <a href="/metals" className="about5">View more →</a>
+              <a href="/vacancies" className="about5">View more →</a>
             </div>
             <img className="about6" src={avtor1} alt="Author" />
           </div>
@@ -56,7 +56,7 @@ function Component() {
               <p>
               We deliver high-quality semi-finished products such as billets, slabs, and coils, enabling manufacturers to streamline processing and maintain efficiency across their value chains.
               </p>
-              <a href="#" className="about5">View more →</a>
+              <a href="/vacancies" className="about5">View more →</a>
             </div>
           </div>
         </div>

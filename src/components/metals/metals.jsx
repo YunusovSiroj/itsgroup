@@ -17,7 +17,7 @@ function Component() {
         <span className='qsd1'>  → </span>
         <a className='qsd1' href="">What We Do</a>
         <span className='qsd1'>  → </span>
-        <a href="">Metals and minerals</a>
+        <a href="/base">Metals and minerals</a>
       </div>
       <div className='hm2'>
         <h1>Metals and minerals</h1>
@@ -57,7 +57,7 @@ function Component() {
               <p>
               We deliver high-quality semi-finished products such as billets, slabs, and coils, enabling manufacturers to streamline processing and maintain efficiency across their value chains.
               </p>
-              <a href="#" className="about5">View more →</a>
+              <a href="/base" className="about5">View more →</a>
             </div>
           </div>
         </div>
@@ -68,7 +68,7 @@ function Component() {
               <p>
               We supply a full range of finished steel products, including rebars, sheets, and pipes, tailored to meet the market demand. Our clients rely on us for ready-to-use, specification-driven materials that combine consistency and reliability,  across global markets.
               </p>
-              <a href="#" className="about5">View more →</a>
+              <a href="/base" className="about5">View more →</a>
             </div>
             <img className="about6" src={avtor3} alt="Author" />
           </div>
