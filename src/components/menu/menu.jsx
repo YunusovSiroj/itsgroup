@@ -1,15 +1,30 @@
-import React from "react"; // ✅ Объединил импорты useState и React
+import React, { useEffect, useState } from "react"; // ✅ Объединил импорты useState и React
 import { X } from "lucide-react";
 import image from "../../assets/img/menu/Rectangle 1305869.png"; // ✅ Пробелы не критичны, но для единообразия можно убрать
 
 import "./menu.scss";
+import axios from "axios";
 
 export default function SidebarMenu({ setIsMenuOpen, isMenuOpen}) {
+  const [data, setData] = useState()
+
 const closeModal = () => {
   setIsMenuOpen(!isMenuOpen)
 
   console.log(isMenuOpen)
 }
+useEffect(() => {
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('https://qwer.mediaprint.uz/api/translations')
+      console.log(response.data)
+      setData(response.data)
+    } catch (error) {
+      console.log(error.message)
+    }
+  }
+  fetchData()
+}, [])
   return (
     <div>
       <div className={`sidebar-menu `}>
@@ -20,7 +35,7 @@ const closeModal = () => {
           </button>
 
           <nav className="menu-nav">
-            <h2 className="menu-title">- What We Do</h2>
+            <h2 className="menu-title">- {data?.['nav.baseCategoryTitle']}</h2>
             <ul className="menu-list" onClick={() => closeModal()}  >
               <li><a className="rewq" href="/component">Metals and minerals</a></li> {/* ✅ Исправлено: добавлен Link и закрыт тег */}
               <li ><a className="rewq" href="/component">Oil & Gas</a></li>

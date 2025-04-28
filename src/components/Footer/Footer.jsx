@@ -1,10 +1,13 @@
 import "./Footer.scss";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaLinkedin, FaInstagram, FaFacebook, FaEnvelope, FaGlobe } from "react-icons/fa";
 import w1 from "../../assets/img/Mask group1.webp";
 import wq13 from "../../assets/img/Frame 34512.webp";
+import axios from "axios";
 
 export default function GlobalPresence() {
+  const [, setData] = useState(null); // исправлено
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -14,13 +17,25 @@ export default function GlobalPresence() {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData({
-      ...formData,
+    setFormData((prev) => ({
+      ...prev,
       [name]: type === "checkbox" ? checked : value,
-    });
+    }));
   };
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('https://qwer.mediaprint.uz/api/translations');
+        setData(response.data.data);
+      } catch (error) {
+        console.error("Ошибка загрузки данных:", error.message);
+      }
+    };
+    fetchData();
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!formData.accepted) {
@@ -33,15 +48,28 @@ export default function GlobalPresence() {
       return;
     }
 
-    console.log("Отправленные данные:", formData);
+    try {
+      const response = await axios.post("/contact", {
+        name: formData.name,
+        phoneNumber: formData.phone,
+        message: formData.message,
+      });
 
-    // Очистка формы
-    setFormData({
-      name: "",
-      phone: "",
-      message: "",
-      accepted: false,
-    });
+      if (response.status === 200) {
+        alert("Спасибо, ваша заявка отправлена!");
+        setFormData({
+          name: "",
+          phone: "",
+          message: "",
+          accepted: false,
+        });
+      } else {
+        alert("Произошла ошибка при отправке. Попробуйте позже.");
+      }
+    } catch (error) {
+      console.error("Ошибка при отправке формы:", error);
+      alert("Произошла ошибка при отправке. Попробуйте позже.");
+    }
   };
 
   return (

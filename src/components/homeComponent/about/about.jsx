@@ -1,30 +1,32 @@
-import React, {useEffect, useState } from 'react';
-import './about.scss';
-import  './aboutmadia.scss'
-import about from '../../../assets/img/Group.png';
-import avtor from '../../../assets/img/avtor.webp';
-import wq3 from '../../../assets/img/Group3.png';
-import wq4 from '../../../assets/img/Component 1.webp';
-import wq5 from '../../../assets/img/image.webp';
-import wq6 from '../../../assets/img/image1.webp';
-import wq7 from '../../../assets/img/image2.webp';
-import wq11 from '../../../assets/img/image 32.webp';
-import wq12 from '../../../assets/img/image 33.webp';
-import eq1 from '../../../assets/img/icons/Mask group1.png';
-import eq2 from '../../../assets/img/icons/Deliver5.png';
-import eq3 from '../../../assets/img/icons/Finance.png';
-import eq4 from '../../../assets/img/icons/Storage.png';
-import eq5 from '../../../assets/img/icons/Deliver5.png';
-import eq6 from '../../../assets/img/icons/ываыва6.png';
-import eq7 from '../../../assets/img/icons/Post-supply services7.png';
+import React, { useEffect, useState } from "react";
+import "./about.scss";
+import "./aboutmadia.scss";
+import about from "../../../assets/img/Group.png";
+import avtor from "../../../assets/img/avtor.webp";
+import wq3 from "../../../assets/img/Group3.png";
+import wq4 from "../../../assets/img/Component 1.webp";
+import wq5 from "../../../assets/img/image.webp";
+import wq6 from "../../../assets/img/image1.webp";
+import wq7 from "../../../assets/img/image2.webp";
+import wq11 from "../../../assets/img/image 32.webp";
+import wq12 from "../../../assets/img/image 33.webp";
+import eq1 from "../../../assets/img/icons/Mask group1.png";
+import eq2 from "../../../assets/img/icons/Deliver5.png";
+import eq3 from "../../../assets/img/icons/Finance.png";
+import eq4 from "../../../assets/img/icons/Storage.png";
+import eq5 from "../../../assets/img/icons/Deliver5.png";
+import eq6 from "../../../assets/img/icons/ываыва6.png";
+import eq7 from "../../../assets/img/icons/Post-supply services7.png";
 import { FaPlus, FaMinus } from "react-icons/fa";
+import axios from "axios";
 
 const locations = [
   {
     country: "UAE",
     img: wq5,
     details: {
-      address: "Jumeirah Lake Towers AG Silver Tower, Cluster 1 32nd Floor, Unit C PO Box: 340808 Dubai, UAE",
+      address:
+        "Jumeirah Lake Towers AG Silver Tower, Cluster 1 32nd Floor, Unit C PO Box: 340808 Dubai, UAE",
       email: "info@bbenergy.com",
       phone: "+998 99 123 45 67",
     },
@@ -33,7 +35,8 @@ const locations = [
     country: "Turkey",
     img: wq6,
     details: {
-      address: "Jumeirah Lake Towers AG Silver Tower, Cluster 1 32nd Floor, Unit C PO Box: 340808 Dubai, UAE",
+      address:
+        "Jumeirah Lake Towers AG Silver Tower, Cluster 1 32nd Floor, Unit C PO Box: 340808 Dubai, UAE",
       email: "info@bbenergy.com",
       phone: "+998 99 123 45 67",
     },
@@ -42,7 +45,8 @@ const locations = [
     country: "Uzbekistan",
     img: wq7,
     details: {
-      address: "Jumeirah Lake Towers AG Silver Tower, Cluster 1 32nd Floor, Unit C PO Box: 340808 Dubai, UAE",
+      address:
+        "Jumeirah Lake Towers AG Silver Tower, Cluster 1 32nd Floor, Unit C PO Box: 340808 Dubai, UAE",
       email: "info@bbenergy.com",
       phone: "+998 99 123 45 67",
     },
@@ -61,52 +65,69 @@ const supplyData = [
 
 export default function GlobalPresence() {
   const [openIndex, setOpenIndex] = useState(null);
- 
+  const [data, setData] = useState();
   const toggleAccordion = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-////////////////////////////
-const statsData = [
-  { label: "Commodities", target: '+40' },
-  { label: "Countries", target: '+30' },
-  { label: " ton. Products traded", target: "+5 mln" },
-];
-
-const StatItem = ({ label, target }) => {
-  const [count, setCount] = useState(0);
-  const [visible, setVisible] = useState(false);
+  ////////////////////////////
+  const statsData = [
+    { label: "Commodities", target: "+40" },
+    { label: "Countries", target: "+30" },
+    { label: " ton. Products traded", target: "+5 mln" },
+  ];
 
   useEffect(() => {
-    const timer = setTimeout(() => setVisible(true), 300);
-    return () => clearTimeout(timer);
-  }, []);
-
-  useEffect(() => {
-    if (!visible) return;
-    let current = 0;
-    const increment = target / 50;
-
-    const updateCounter = () => {
-      current += increment;
-      if (current < target) {
-        setCount(Math.floor(current));
-        setTimeout(updateCounter, 30);
-      } else {
-        setCount(target);
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://qwer.mediaprint.uz/api/products"
+        );
+        setData(response.data.data);
+      } catch (error) {
+        console.log(error.message);
       }
     };
+    fetchData();
+  }, []);
 
-    updateCounter();
-  }, [visible, target]);
+  // const data = {
+  //   title: 'sirojidin',
+  //   subtitle: 'nimadirlar'
+  // }
 
-  return (
-    <div className={`stat-item ${visible ? "visible" : ""}`}>
-      <span className="stat-value">{count}</span>
-      <span className="stat-label">{label}</span>
-    </div>
-  );
-};
+  const StatItem = ({ label, target }) => {
+    const [count, setCount] = useState(0);
+    const [visible, setVisible] = useState(false);
 
+    useEffect(() => {
+      const timer = setTimeout(() => setVisible(true), 300);
+      return () => clearTimeout(timer);
+    }, []);
+
+    useEffect(() => {
+      if (!visible) return;
+      let current = 0;
+      const increment = target / 50;
+
+      const updateCounter = () => {
+        current += increment;
+        if (current < target) {
+          setCount(Math.floor(current));
+          setTimeout(updateCounter, 30);
+        } else {
+          setCount(target);
+        }
+      };
+
+      updateCounter();
+    }, [visible, target]);
+    return (
+      <div className={`stat-item ${visible ? "visible" : ""}`}>
+        <span className="stat-value">{count}</span>
+        <span className="stat-label">{label}</span>
+      </div>
+    );
+  };
 
   return (
     <div>
@@ -115,11 +136,25 @@ const StatItem = ({ label, target }) => {
         <div className="about2">
           <div className="about3">
             <div className="about4">
-              <h2>About us</h2>
+              {/* <h2>About us</h2>
               <p>
                 We are an international trading company focusing on the supply of metallurgy, oil & gas, and agriculture products. With a strong presence across Europe, Asia, Africa, and the Middle East, we connect producers with global markets, through integrated solutions that combine sourcing, logistics, storage, and finance.
               </p>
-              <a href="/component" className="about5">View more →</a>
+            */}
+              {data?.map((item) => (
+                <div key={item.id}>
+                  <h1>{item?.title}</h1>
+                  <h5
+                    dangerouslySetInnerHTML={{
+                      __html: item?.description.replace(/ style="[^"]*"/g, ""),
+                    }}
+                  ></h5>
+                  <a href="/component" className="about5">
+                    View more →
+                  </a>
+                  <img src={item?.images[0]} alt="" />
+                </div>
+              ))}
             </div>
             <img className="about6" src={avtor} alt="Author" />
           </div>
@@ -135,9 +170,16 @@ const StatItem = ({ label, target }) => {
               <div className="accordion">
                 {locations.map((item, index) => (
                   <div key={index} className="accordion-item">
-                    <button className="accordion-header" onClick={() => toggleAccordion(index)}>
+                    <button
+                      className="accordion-header"
+                      onClick={() => toggleAccordion(index)}
+                    >
                       <span className="country-info">
-                        <img className="flag" src={item.img} alt={`${item.country} flag`} />
+                        <img
+                          className="flag"
+                          src={item.img}
+                          alt={`${item.country} flag`}
+                        />
                         <span className="country-name">{item.country}</span>
                       </span>
                       {openIndex === index ? <FaMinus /> : <FaPlus />}
@@ -158,7 +200,11 @@ const StatItem = ({ label, target }) => {
               <div className="qw2">
                 <div className="stats-container">
                   {statsData.map((stat, index) => (
-                    <StatItem key={index} label={stat.label} target={stat.target} />
+                    <StatItem
+                      key={index}
+                      label={stat.label}
+                      target={stat.target}
+                    />
                   ))}
                 </div>
               </div>
@@ -183,12 +229,16 @@ const StatItem = ({ label, target }) => {
           <button>→</button>
         </div>
       </section>
-
       <section className="supply-chain">
         <h2 className="supply-chain__title">Seamless supply chains</h2>
         <div className="supply-chain__grid">
           {supplyData.map(({ id, img, title, featured }) => (
-            <div key={id} className={`supply-chain__card ${featured ? "supply-chain__card--featured" : ""}`}>
+            <div
+              key={id}
+              className={`supply-chain__card ${
+                featured ? "supply-chain__card--featured" : ""
+              }`}
+            >
               <img className="supply-chain__icon" src={img}></img>
               <h3 className="supply-chain__heading">{title}</h3>
               <span className="supply-chain__number">{id}</span>
@@ -214,8 +264,6 @@ const StatItem = ({ label, target }) => {
           <button>→</button>
         </div>
       </section>
-
-      
     </div>
   );
-};
+}
