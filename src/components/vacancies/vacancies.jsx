@@ -134,10 +134,10 @@ function Vacancies() {
                   <FaEye /> {vac.views}
                 </span>
                 <span>{vac.requests} запросов</span>
-              </div>
-              <button className="send-button">
+                <button className="send-button">
                 <FaPaperPlane /> Send
               </button>
+              </div>
             </div>
           </div>
         ))}
