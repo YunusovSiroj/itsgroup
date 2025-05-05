@@ -55,6 +55,33 @@
       width: 60%;
     }
   }
+  .student {
+    width: 80%;
+    margin: 100px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    .student2 {
+      flex: 1;
+      height: 680px;
+      background: #F5F5F7;
+      margin-right: 5%;
+    }
+  
+    .student1 {
+      
+      flex: 1;
+      width: 100%;
+    }
+    .student3 {
+      margin-left: 5%;
+      text-decoration: none;
+      color: #222;
+      padding: 10px;
+    }
+  }
+  
   
   .supply-chain {
     margin: 100px 10% 0;
@@ -195,4 +222,10 @@
       }
     }
   }
-  
+  @media (max-width: 1400px) {
+
+    .student .student2 {
+      height: 600px;
+      
+    }
+  }

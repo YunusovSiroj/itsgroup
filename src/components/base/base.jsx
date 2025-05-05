@@ -1,8 +1,8 @@
 import React from 'react';
 import img3 from '../../assets/img/base/met1.webp';
-import avtor from '../../assets/img/base/met2.webp';
-import avtor1 from '../../assets/img/base/met3.webp';
-import avtor2 from '../../assets/img/base/met4.webp';
+import avtor from '../../assets/img/base/met2.png';
+import avtor1 from '../../assets/img/base/met3.png';
+import avtor2 from '../../assets/img/base/met4.png';
 import './base.scss'
 
 function Component() {
@@ -16,48 +16,49 @@ function Component() {
         <span className='qsd1'>  → </span>
         <a className='qsd1' href="">What We Do</a>
         <span className='qsd1'>  → </span>
-        <a href="/slabs">Metals and minerals</a>
+        <a href="/slabs">Semi products</a>
       </div>
       <div className='hm2'>
-        <h1>Metals and minerals</h1>
-        <p>We supply the full spectrum of the metals value chain. Whether it’s iron ore for processing, billets for rolling, or finished steel for construction and infrastructure, We deliver at every stage of industrial production.</p>
+        <h1>Semi products</h1>
+        <p>We deliver high-quality semi-finished products such as billets, slabs, and coils, enabling manufacturers to streamline processing and maintain efficiency across their value chains.</p>
       </div>
       <div>
       <section className="about11">
-        <div className="about2">
-          <div className="about3">
-          <img className="about6" src={avtor} alt="Author" />
-            <div className="about4">
-              <h2>Base metals</h2>
-              <p>
-              ITS Group supplies a broad range of base and precious metals . From zinc, copper, and lead to gold and silver, we deliver metals that form the foundation of everything from construction and electronics to renewable energy and finance.
+        <div className="abouut11">
+          <div className="abouut12">
+          
+            <div className="abouut13">
+              <h2 className="abouut14">Billets</h2>
+              <p className="abouut15">
+              Bullets are square or round steel sections used for hot rolling, serving as the base for products like rebars, wire rods, bars, and small-diameter pipes, making up over 60% of long steel products in global infrastructure.
               </p>
-              <a href="/slabs" className="about5">View more →</a>
+              
             </div>
+            <img className="abouut16" src={avtor} alt="Author" />
           </div>
         </div>
-        <div className="about22">
-          <div className="about3">
-            <div className="about4">
-              <h2>Bulk commodities</h2>
-              <p>
-              We supply high-volume bulk materials that drive the world’s industrial backbone. From iron ore and coal to DRI and HBI, we provide the essential raw inputs used in steelmaking, power generation, cement production, and metallurgy.
+        <div className="abouut11">
+          <div className="abouut12">
+            <div className="abouut13">
+              <h2 className="abouut14">Slabs</h2>
+              <p className="abouut15"> 
+              Slabs are flat steel sections used for plates, coils, and shipbuilding, reaching up to 1.5 meters in width for large coils and heavy plates.
               </p>
-              <a href="/slabs" className="about5">View more →</a>
+              <a href="../slabs">kpkpokp</a>
             </div>
-            <img className="about6" src={avtor1} alt="Author" />
+            <img className="abouut16" src={avtor1} alt="Author" />
           </div>
         </div>
-        <div className="about2">
-          <div className="about3">
-            <img className="about6" src={avtor2} alt="Author" />
-            <div className="about4">
-              <h2>Semi products</h2>
-              <p>
-              We deliver high-quality semi-finished products such as billets, slabs, and coils, enabling manufacturers to streamline processing and maintain efficiency across their value chains.
+        <div className="abouut11">
+          <div className="abouut12">
+            
+            <div className="abouut13">
+              <h2 className="abouut14">Blooms</h2>
+              <p className="abouut15">
+              Blooms are large square sections used for rails, I-beams, and heavy structures, with over 130 tons required per kilometer of railway.
               </p>
-              <a href="/slabs" className="about5">View more →</a>
             </div>
+            <img className="abouut16" src={avtor2} alt="Author" />
           </div>
         </div>
       </section>

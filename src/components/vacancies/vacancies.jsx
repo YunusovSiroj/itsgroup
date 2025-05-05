@@ -5,6 +5,8 @@ import eq1 from "../../assets/img/vacancies/Mask group.png";
 import eq2 from "../../assets/img/vacancies/qqq.png";
 import eq3 from "../../assets/img/vacancies/www.png";
 import eq4 from "../../assets/img/vacancies/eee.png";
+import img5 from "../../assets/img/vacancies/image.png";
+import img6 from "../../assets/img/vacancies/asa.png";
 import "./vacancies.scss";
 import { FaEye, FaPaperPlane } from "react-icons/fa";
 
@@ -80,13 +82,36 @@ function Vacancies() {
       <section className="vacancies-hero">
         <div className="vacancies-breadcrumbs">
           <a href="">Home</a>
-          <span> → </span>
+          <span>  </span>
           <a href="">What We Do</a>
           <h2>Contacts</h2>
         </div>
         <img src={img} alt="Banner" />
       </section>
 
+      <section className="student">
+      
+        <div className="student2">
+        <img className="student1" src={img5} alt="Career" />
+          <h2 className="student3">For Students & Graduates</h2>
+          <h3 className="student3">Start strong.</h3>
+          <p className="student3">
+          Join ITS Group at the beginning of your career and gain hands-on experience in global trade, logistics, and commodities. We invest in your growth from day one.
+          </p>
+          <a className="student3" href="">Apply now →</a>
+        </div>
+      
+        <div className="student2">
+        <img className="student1" src={img6} alt="Career" />
+          <h2 className="student3">For Experienced Professionals</h2>
+          <h2 className="student3">Bring your expertise.</h2>
+          <p className="student3">
+          We're looking for sharp minds with industry experience to help shape the future of commodity trading. At ITS Group, your insight moves markets.
+          </p>
+          <a className="student3" href="">Apply now →</a>
+        </div>
+        
+      </section>
       <section className="career">
         <div className="career-text">
           <h2>Career opportunities</h2>
