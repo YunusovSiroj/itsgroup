@@ -44,7 +44,7 @@ function Component() {
               <p className="abouut15"> 
               Slabs are flat steel sections used for plates, coils, and shipbuilding, reaching up to 1.5 meters in width for large coils and heavy plates.
               </p>
-              <a href="../slabs">kpkpokp</a>
+              <a href="/vacancies">kpkpokp</a>
             </div>
             <img className="abouut16" src={avtor1} alt="Author" />
           </div>
