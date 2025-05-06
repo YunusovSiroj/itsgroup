@@ -141,20 +141,23 @@ export default function GlobalPresence() {
                 We are an international trading company focusing on the supply of metallurgy, oil & gas, and agriculture products. With a strong presence across Europe, Asia, Africa, and the Middle East, we connect producers with global markets, through integrated solutions that combine sourcing, logistics, storage, and finance.
               </p>
             */}
-              {data?.map((item) => (
-                <div key={item.id}>
-                  <h1>{item?.title}</h1>
+              {data?.length > 0 && (
+                <div key={data[0].id}>
+                  <h1>{data[0]?.title}</h1>
                   <h5
                     dangerouslySetInnerHTML={{
-                      __html: item?.description.replace(/ style="[^"]*"/g, ""),
+                      __html: data[0]?.description.replace(
+                        / style="[^"]*"/g,
+                        ""
+                      ),
                     }}
                   ></h5>
                   <a href="/component" className="about5">
                     View more →
                   </a>
-                  <img src={item?.images[0]} alt="" />
+                  <img src={data[0]?.images[0]} alt="" />
                 </div>
-              ))}
+              )}
             </div>
             <img className="about6" src={avtor} alt="Author" />
           </div>
