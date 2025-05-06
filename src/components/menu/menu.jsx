@@ -11,8 +11,6 @@ export default function SidebarMenu({ setIsMenuOpen, isMenuOpen, data }) {
     console.log(isMenuOpen);
   };
 
-
-
   return (
     <div>
       <div className={`sidebar-menu `}>
@@ -26,23 +24,23 @@ export default function SidebarMenu({ setIsMenuOpen, isMenuOpen, data }) {
             <h2 className="menu-title">- {data?.["nav.baseCategoryTitle"]}</h2>
             <ul className="menu-list" onClick={() => closeModal()}>
               <li>
-                <a className="rewq" href="/component">
+                <a className="rewq" href="/metals">
                   Metals and minerals
                 </a>
               </li>{" "}
               {/* ✅ Исправлено: добавлен Link и закрыт тег */}
               <li>
-                <a className="rewq" href="/component">
+                <a className="rewq" href="/base">
                   Oil & Gas
                 </a>
               </li>
               <li>
-                <a className="rewq" href="/component">
+                <a className="rewq" href="/slabs">
                   Agriculture
                 </a>
               </li>
               <li>
-                <a className="rewq" href="/component">
+                <a className="rewq" href="/semi">
                   Logistics and Storage
                 </a>{" "}
               </li>{" "}
@@ -50,10 +48,10 @@ export default function SidebarMenu({ setIsMenuOpen, isMenuOpen, data }) {
             </ul>
 
             <div className="menu-footer" onClick={() => closeModal()}>
-              <p>Who We Are</p>
-              <p>ESG</p>
-              <p>Vacancies</p>
-              <p>Contacts</p>
+              <a className="rewq1" href="/vacancies"><p>Who We Are</p></a>
+              <a className="rewq1" href="/vacancies"><p>ESG</p></a>
+              <a className="rewq1" href="/vacancies"><p>Vacancies</p></a>
+              <a className="rewq1" href="/vacancies"><p>Contacts</p></a>
             </div>
           </nav>
         </div>

@@ -23,18 +23,18 @@ function Component() {
         <a href="/vacancies">Who we are</a>
       </div>
       <div className="hm2">
-        <h1>About us</h1>
+        <h1>About us <br/><br/></h1>
         <p>
           ITS Group is a global trading company supplying critical raw materials
-          to the world's industrial backbone. For over a decade, we've
+          to the world's industrial backbone. <br/> <br/>For over a decade, we've
           successfully connected producers and consumers across metals, energy,
           and agricultural markets, building a reputation for resilience,
-          precision, and problem- solving under pressure. We operate across time
+          precision, and problem- solving under pressure.<br/><br/> We operate across time
           zones and geographies, navigating complexity with a focus on what
           matters most -- ensuring delivery, maintaining quality, and creating
           long-term value. From sourcing and financing to logistics, storage,
           and post-supply services, we offer end-to-end solutions tailored to
-          the realities of global trade. Whether navigating volatile markets or
+          the realities of global trade. <br/><br/> Whether navigating volatile markets or
           solving supply challenges, our team moves quickly and decisively -
           because we don't wait for ideal conditions; we create them.
         </p>

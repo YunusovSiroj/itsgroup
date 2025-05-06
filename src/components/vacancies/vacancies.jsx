@@ -82,7 +82,7 @@ function Vacancies() {
       <section className="vacancies-hero">
         <div className="vacancies-breadcrumbs">
           <a href="">Home</a>
-          <span>  </span>
+          <span> → </span>
           <a href="">What We Do</a>
           <h2>Contacts</h2>
         </div>
