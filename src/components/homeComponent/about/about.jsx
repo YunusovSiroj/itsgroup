@@ -136,22 +136,22 @@ export default function GlobalPresence() {
         <div className="about2">
           <div className="about3">
             <div className="about4">
-              {/* <h2>About us</h2>
+              <h2>About us</h2>
               <p>
                 We are an international trading company focusing on the supply of metallurgy, oil & gas, and agriculture products. With a strong presence across Europe, Asia, Africa, and the Middle East, we connect producers with global markets, through integrated solutions that combine sourcing, logistics, storage, and finance.
               </p>
-            */}
+           
               {data?.length > 0 && (
                 <div key={data[0].id}>
-                  <h1>{data[0]?.title}</h1>
-                  <h5
+                  {/* <h1>{data[0]?.title}</h1> */}
+                  {/* <h5
                     dangerouslySetInnerHTML={{
                       __html: data[0]?.description.replace(
                         / style="[^"]*"/g,
                         ""
                       ),
                     }}
-                  ></h5>
+                  ></h5> */}
                   <a href="/component" className="about5">
                     View more →
                   </a>

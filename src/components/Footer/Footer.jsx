@@ -1,13 +1,21 @@
 import "./Footer.scss";
 import React, { useEffect, useState } from "react";
-import { FaLinkedin, FaInstagram, FaFacebook, FaEnvelope, FaGlobe } from "react-icons/fa";
+import {
+  FaLinkedin,
+  
+  FaInstagram,
+  FaFacebook,
+  FaEnvelope,
+  FaGlobe,
+} from "react-icons/fa";
 import w1 from "../../assets/img/Mask group1.webp";
+import { useRef } from "react"; // так нужно!
 import wq13 from "../../assets/img/Frame 34512.webp";
 import axios from "axios";
 
 export default function GlobalPresence() {
-  const [, setData] = useState(null); // исправлено
-
+  const videoRef = useRef(null);
+  const [data, setData] = useState(null);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -23,17 +31,26 @@ export default function GlobalPresence() {
     }));
   };
 
+  const fetchData = async () => {
+    try {
+      const res = await axios.get("https://admin.itsgroup.uz/api/banners");
+      setData(res.data);
+    } catch (error) {
+      console.log("Ошибка при загрузке данных:", error);
+    }
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('https://qwer.mediaprint.uz/api/translations');
-        setData(response.data.data);
-      } catch (error) {
-        console.error("Ошибка загрузки данных:", error.message);
-      }
-    };
     fetchData();
   }, []);
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch((e) => {
+        console.log("Автозапуск заблокирован браузером:", e);
+      });
+    }
+  }, [data]); // Обновим проигрывание при изменении данных
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -110,10 +127,13 @@ export default function GlobalPresence() {
                 onChange={handleChange}
               />
               <span>
-                By submitting this form, I confirm that I have read and accept the Privacy Policy.
+                By submitting this form, I confirm that I have read and accept
+                the Privacy Policy.
               </span>
             </label>
-            <button type="submit" disabled={!formData.accepted}>Send</button>
+            <button type="submit" disabled={!formData.accepted}>
+              Send
+            </button>
           </div>
         </form>
         <div className="contact-image">
@@ -126,42 +146,69 @@ export default function GlobalPresence() {
           <img src={w1} alt="ITS Logo" />
           <p className="footer__social-label">Social network</p>
           <div className="footer__social-icons">
-            <a href="#"><FaGlobe /></a>
-            <a href="#"><FaLinkedin /></a>
-            <a href="#"><FaInstagram /></a>
-            <a href="#"><FaFacebook /></a>
-            <a href="mailto:itsgroup@gmail.ru"><FaEnvelope /></a>
+            <a href="#">
+              <FaGlobe />
+            </a>
+            <a href="#">
+              <FaLinkedin />
+            </a>
+            <a href="#">
+              <FaInstagram />
+            </a>
+            <a href="#">
+              <FaFacebook />
+            </a>
+            <a href="mailto:itsgroup@gmail.ru">
+              <FaEnvelope />
+            </a>
           </div>
-          <p className="footer__copyright">
-            Copyright &copy; 2025 ITS Group
-          </p>
+          <p className="footer__copyright">Copyright &copy; 2025 ITS Group</p>
         </div>
 
         <div className="footer__section">
           <h3>All pages</h3>
           <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Production</a></li>
-            <li><a href="#">Contacts</a></li>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">About Us</a>
+            </li>
+            <li>
+              <a href="#">Production</a>
+            </li>
+            <li>
+              <a href="#">Contacts</a>
+            </li>
           </ul>
         </div>
 
         <div className="footer__section">
           <h3>Our products</h3>
           <ul>
-            <li><a href="#">Metals and minerals</a></li>
-            <li><a href="#">Base metals</a></li>
-            <li><a href="#">Bulk commodities</a></li>
-            <li><a href="#">Semi products</a></li>
-            <li><a href="#">Final products</a></li>
+            <li>
+              <a href="#">Metals and minerals</a>
+            </li>
+            <li>
+              <a href="#">Base metals</a>
+            </li>
+            <li>
+              <a href="#">Bulk commodities</a>
+            </li>
+            <li>
+              <a href="#">Semi products</a>
+            </li>
+            <li>
+              <a href="#">Final products</a>
+            </li>
           </ul>
         </div>
 
         <div className="footer__section">
           <h3>Адрес магазина</h3>
           <p className="footer__address">
-            <strong>Tashkent Ring Automobile Road,</strong> Tashkent, Toshkent Shahri, Uzbekistan
+            <strong>Tashkent Ring Automobile Road,</strong> Tashkent, Toshkent
+            Shahri, Uzbekistan
           </p>
           <h3>Адрес офиса</h3>
           <p className="footer__address">

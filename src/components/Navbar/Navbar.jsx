@@ -51,7 +51,7 @@ function Navbar() {
         <img src={img2} alt="Logo" />
 
         <div className="navbar3">
-          <div className="dropdown">
+          {/* <div className="dropdown">
             <IoEarth />
             <button className="dropdown-button">Eng ▼</button>
             <div className="dropdown-menu">
@@ -59,7 +59,7 @@ function Navbar() {
               <a href="#">Рус</a>
               <a href="#">Uz</a>
             </div>
-          </div>
+          </div> */}
 
           <button onClick={toggleMenu} className="menu-toggle-button">
             <MdMenu />

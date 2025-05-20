@@ -21,7 +21,7 @@ export default function SidebarMenu({ setIsMenuOpen, isMenuOpen, data }) {
           </button>
 
           <nav className="menu-nav">
-            <h2 className="menu-title">- {data?.["nav.baseCategoryTitle"]}</h2>
+            <h2 className="menu-title">- {data?.["nav?.baseCategoryTitle"]}</h2>
             <ul className="menu-list" onClick={() => closeModal()}>
               <li>
                 <a className="rewq" href="/metals">

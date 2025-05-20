@@ -45,7 +45,7 @@ export default function Navbar2() {
         <div className="navbar2">
           <img src={img1} alt="Logo" />
           <div className="navbar3">
-            <div className="dropdown">
+            {/* <div className="dropdown">
               <IoEarth />
               <button className="dropdown-button">Eng ▼</button>
               <div className="dropdown-menu">
@@ -53,7 +53,7 @@ export default function Navbar2() {
                 <a href="#">Рус</a>
                 <a href="#">Uz</a>
               </div>
-            </div>
+            </div> */}
             <button onClick={toggleMenu} className="menu-toggle-button">
               <MdMenu size={28} />
             </button>
